@@ -4,41 +4,89 @@
   <meta charset="UTF-8">
   <title>Muhammadali Prodaction</title>
   <style>
-    body {
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 1000;
+    }
+
+    #intro video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #main-content {
+      display: none;
       background-image: url('https://images.alphacoders.com/109/1098156.jpg');
       background-size: cover;
-      background-repeat: no-repeat;
       background-position: center;
       color: white;
-      font-family: 'Arial', sans-serif;
       text-align: center;
       padding: 50px;
     }
 
-    h1 {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 12px;
-      display: inline-block;
-    }
-
-    a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-size: 18px;
-      display: block;
-      margin-top: 15px;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    #continue {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1>Muhammadali Prodaction Minecraft Edition!</h1>
-  <p>YouTube va Telegram sahifalarimiz:</p>
-  <a href="https://youtube.com/@masterprouzb" target="_blank">YouTube kanalimiz</a>
-  <a href="https://t.me/MuhammadaliProdaction" target="_blank">Telegram kanalimiz</a>
+
+  <!-- Kirish videosi -->
+  <div id="intro">
+    <video id="intro-video" autoplay muted>
+      <source src="video.mp4" type="video/mp4">
+      Brauzeringiz video ko‘rsatishni qo‘llab-quvvatlamaydi.
+    </video>
+    <button id="continue">Saytga kirish</button>
+  </div>
+
+  <!-- Asosiy sayt -->
+  <div id="main-content">
+    <h1>Muhammadali Prodaction</h1>
+    <p>Telegram va YouTube sahifalarimiz:</p>
+    <a href="https://youtube.com/@masterprouzb" target="_blank">YouTube</a>
+    <a href="https://t.me/MuhammadaliProdaction" target="_blank">Telegram</a>
+  </div>
+
+  <script>
+    const video = document.getElementById("intro-video");
+    const intro = document.getElementById("intro");
+    const main = document.getElementById("main-content");
+    const btn = document.getElementById("continue");
+
+    video.addEventListener("ended", () => {
+      intro.style.display = "none";
+      main.style.display = "block";
+    });
+
+    btn.addEventListener("click", () => {
+      intro.style.display = "none";
+      main.style.display = "block";
+    });
+  </script>
+
 </body>
 </html>
