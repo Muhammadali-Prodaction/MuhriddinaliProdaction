@@ -1,28 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Foydalanuvchi formasi</title>
-</head>
-<body style="font-family: sans-serif; padding: 20px;">
-
-  <h1>Ro‘yxatdan o‘tish formasi</h1>
-
-  <form>
-    <label>Ismingiz:</label><br>
-    <input type="text" placeholder="Ism"><br><br>
-
-    <label>Email:</label><br>
-    <input type="email" placeholder="Email"><br><br>
-
-    <label>Parol:</label><br>
-    <input type="password" placeholder="Parol"><br><br>
-
-    <input type="submit" value="Yuborish">
-  </form>
-
-</body>
-</html>
-
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
@@ -31,56 +7,18 @@
     body, html {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       font-family: 'Arial', sans-serif;
-    }
-
-    /* Kirish videosi */
-    #intro {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      z-index: 1000;
-    }
-
-    #intro video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    #continue {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 12px 24px;
-      background: rgba(255, 255, 255, 0.8);
-      color: black;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    /* Asosiy sayt */
-    #main-content {
-      display: none;
       background-image: url('https://images.alphacoders.com/109/1098156.jpg');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
-      padding: 60px;
       min-height: 100vh;
     }
 
     h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      font-size: 48px; /* Sarlavhani kattalashtirdim */
+      margin-top: 30px;
     }
 
     p {
@@ -103,7 +41,35 @@
       background-color: #555;
     }
 
-    /* Minecraft tugma */
+    form {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      margin: 30px auto;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="submit"] {
+      background-color: #5EBD3E;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4CAF50;
+    }
+
     .mcraft-btn {
       background-color: #5EBD3E;
       color: white;
@@ -118,6 +84,7 @@
       background-position: 5px center;
       cursor: pointer;
       transition: 0.3s;
+      margin-top: 20px;
     }
 
     .mcraft-btn:hover {
@@ -127,42 +94,25 @@
 </head>
 <body>
 
-  <!-- Video orqali kirish sahifasi -->
-  <div id="intro">
-    <video id="intro-video" autoplay muted>
-      <source src="video.mp4" type="video/mp4">
-      Brauzeringiz video ko‘rsatishni qo‘llab-quvvatlamaydi.
-    </video>
-    <button id="continue">Saytga kirish</button>
-  </div>
+  <h1>Muhammadali Prodaction</h1>
 
-  <!-- Asosiy sayt -->
-  <div id="main-content">
-    <h1>Muhammadali Prodaction</h1>
-    <p>Bizning sahifalarimiz:</p>
+  <h1>Ro‘yxatdan o‘tish formasi</h1>
 
-    <a href="https://youtube.com/@masterprouzb" target="_blank">YouTube</a>
-    <a href="https://t.me/MuhammadaliProdaction" target="_blank">Telegram</a>
-    <br><br>
-    <button class="mcraft-btn">O‘yinlarimizni sinab ko‘ring</button>
-  </div>
+  <form>
+    <input type="text" placeholder="Ismingiz">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Parol">
+    <input type="submit" value="Yuborish">
+  </form>
 
-  <script>
-    const video = document.getElementById("intro-video");
-    const intro = document.getElementById("intro");
-    const main = document.getElementById("main-content");
-    const btn = document.getElementById("continue");
+  <p>Bizning sahifalarimiz:</p>
 
-    video.addEventListener("ended", () => {
-      intro.style.display = "none";
-      main.style.display = "block";
-    });
-
-    btn.addEventListener("click", () => {
-      intro.style.display = "none";
-      main.style.display = "block";
-    });
-  </script>
+  <a href="https://youtube.com/@masterprouzb" target="_blank">YouTube</a>
+  <a href="https://t.me/MuhammadaliProdaction" target="_blank">Telegram</a>
+  
+  <br><br>
+  
+  <button class="mcraft-btn">O‘yinlarimizni sinab ko‘ring</button>
 
 </body>
 </html>
